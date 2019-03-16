@@ -9,7 +9,15 @@
     <!-- Javascript Libraries -->
     {% block jslibs %}
     {% endblock %}
+    {% if debug %}
+    <script src="/view/static/js/lib/jquery-3.3.1.js"></script>
+    {% else %}
+    <script src="/view/static/js/lib/jquery-3.3.1.min.js"></script>
+    {% endif %}
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://tools.noimbrian.com/css/reset.css" />
+    <link rel="stylesheet" href="/view/static/css/style.css" />
+    <link rel="stylesheet" href="/view/static/css/layout.css" />
     {% block stylesheets %}
     {% endblock %}
     <!-- Meta Tags -->
@@ -21,11 +29,34 @@
     <meta property="og:description" content="Web Interface for Augur">
     <meta property="og:image" content="https://augur.noimbrian.com/img/logo-text.png">
     <meta property="og:image:type" content="image/png">
-
     {% block meta %}
     {% endblock %}
+    <!-- Inline Scripts -->
+    <script>
+$(document).ready(function(){
+  // Do stuff after the page has loaded
+  {% block onPageLoad %}
+  {% endblock %}
+})
+    </script>
   </head>
   <body>
+    <header>
+      <div class="text-wrapper">
+        <h1>Augur View</h1>
+      </div>
+      <div class="image-wrapper">
+        <img src="https://augur.noimbrian.com/static/img/logo.png" />
+      </div>
+    </header>
+    <main>
+      {% block body %}
 
+      {% endblock %}
+    </main>
+    <footer>
+      <span>Copywrite 2019 Brian Donald</span>
+      <span>See <a target="_blank" href="https://augur.noimbrian.com">For dependency license information</a></span>
+    </footer>
   </body>
 </html>
