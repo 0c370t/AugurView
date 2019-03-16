@@ -6,7 +6,7 @@ view = Blueprint('AugurView',__name__,template_folder="templates",static_folder=
 
 @view.route("/")
 def index():
-    return render_template("view/template.html.jinja")
+    return render_template("view/view.html.jinja")
 
 
 # Context Processor
