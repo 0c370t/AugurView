@@ -9,6 +9,11 @@
     <!-- Javascript Libraries -->
     {% block jslibs %}
     {% endblock %}
+    {% if debug %}
+    <script src="/view/static/js/lib/jquery-3.3.1.js"></script>
+    {% else %}
+    <script src="/view/static/js/lib/jquery-3.3.1.min.js"></script>
+    {% endif %}
     <!-- Stylesheets -->
     {% block stylesheets %}
     {% endblock %}
