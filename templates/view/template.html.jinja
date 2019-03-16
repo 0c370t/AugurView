@@ -35,9 +35,8 @@
     <script>
 $(document).ready(function(){
   // Do stuff after the page has loaded
-  iw = $('#imageWrapper');
-  iwHeight = iw.css('height');
-  iw.css('width',iwHeight);
+  {% block onPageLoad %}
+  {% endblock %}
 })
     </script>
   </head>
@@ -51,14 +50,9 @@ $(document).ready(function(){
       </div>
     </header>
     <main>
-      <form method="POST" action="formReciever">
+      {% block body %}
 
-      </form>
-      <div id="updateableImageContainer">
-        <div id="imageWrapper">
-          <img id="userImage" />
-        </div>
-      </div>
+      {% endblock %}
     </main>
     <footer>
       <span>Copywrite 2019 Brian Donald</span>
