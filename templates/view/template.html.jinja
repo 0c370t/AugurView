@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <!--
+      While I don't particulaly like using jQuery for lightweight stuff
+        this was built in part for a class that requires its use. In future
+        I may create a version that does not use jQuery.
+    -->
+    <!-- Javascript Libraries -->
+    {% block jslibs %}
+    {% endblock %}
+    <!-- Stylesheets -->
+    {% block stylesheets %}
+    {% endblock %}
+    <!-- Meta Tags -->
+    <meta name="author" content="Brian Donald">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://augur.noimbrian.com{{ url_for(request.endpoint) }}">
+    <meta property="og:title" content="Augur View | {{ pageTitle }}">
+    <meta property="og:site_name" content="Augur View">
+    <meta property="og:description" content="Web Interface for Augur">
+    <meta property="og:image" content="https://augur.noimbrian.com/img/logo-text.png">
+    <meta property="og:image:type" content="image/png">
+
+    {% block meta %}
+    {% endblock %}
+  </head>
+  <body>
+
+  </body>
+</html>
