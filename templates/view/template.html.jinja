@@ -33,10 +33,12 @@
     {% endblock %}
     <!-- Inline Scripts -->
     <script>
-function onPageLoad(){
-  // Do loading stuff here
-}
-
+$(document).ready(function(){
+  // Do stuff after the page has loaded
+  iw = $('#imageWrapper');
+  iwHeight = iw.css('height');
+  iw.css('width',iwHeight);
+})
     </script>
   </head>
   <body>
@@ -49,7 +51,14 @@ function onPageLoad(){
       </div>
     </header>
     <main>
+      <form method="POST" action="formReciever">
 
+      </form>
+      <div id="updateableImageContainer">
+        <div id="imageWrapper">
+          <img id="userImage" />
+        </div>
+      </div>
     </main>
     <footer>
       <span>Copywrite 2019 Brian Donald</span>
