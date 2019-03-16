@@ -32,13 +32,8 @@
     {% block meta %}
     {% endblock %}
     <!-- Inline Scripts -->
-    <script>
-$(document).ready(function(){
-  // Do stuff after the page has loaded
-  {% block onPageLoad %}
-  {% endblock %}
-})
-    </script>
+    {% block headScript %}
+    {% endblock %}
   </head>
   <body>
     <header>

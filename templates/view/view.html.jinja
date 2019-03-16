@@ -1,14 +1,12 @@
 {% extends 'view/template.html.jinja' %}
 
-{% block onPageLoad %}
-iw = $('#imageWrapper');
-iwHeight = iw.css('height');
-iw.css('width',iwHeight);
+{% block headScript %}
+<script src="static/js/view_formBuilder.js"></script>
 {% endblock %}
 
 {% block body %}
 <form method="POST" action="formReciever">
-
+  <select id="endpointSelector"></select>
 </form>
 <div id="updateableImageContainer">
   <div id="imageWrapper">
