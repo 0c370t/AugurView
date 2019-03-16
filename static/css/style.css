@@ -47,13 +47,11 @@ body > header .text-wrapper{
 */
 form[action='formReciever']{
 	width:100%;
-	background-color:#ddd;
 	height:5rem;
 	display:block;
 }
 div#updateableImageContainer{
 	height:calc(100% - 5rem);
-	background-color:black;
 }
 div#imageWrapper{
   /*
@@ -64,7 +62,6 @@ div#imageWrapper{
 	margin: 0 auto;
 }
 img#userImage{
-	background-color:white;
 	height: 100%;
 	width: 100%;
 }
