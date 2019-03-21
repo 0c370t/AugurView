@@ -14,8 +14,6 @@ $(document).ready(function(){
       newOption.value = route['route'];
       newOption.textContent = route['description'];
       $('#endpointSelector').append(newOption);
-      console.log(route);
-      console.log(newOption);
     }
   });
 });
