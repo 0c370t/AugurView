@@ -58,12 +58,14 @@ div#imageWrapper{
     This div will always be square and fill it's container
     Math is completed in the document ready jQuery function
   */
-	height: 100%;
-	margin: 0 auto;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 100%;
 }
 img#userImage{
-	height: 100%;
-	width: 100%;
+	height: auto;
+	min-width: 100%;
+	max-width: 100%;
 }
 
 

@@ -2,7 +2,7 @@ $(document).ready(function(){
   // Set up image display
   iw = $('#imageWrapper');
   iwHeight = iw.css('height');
-  iw.css('width',iwHeight);
+  iw.css('min-width',iwHeight);
 
 
   // Populate endpoint options
