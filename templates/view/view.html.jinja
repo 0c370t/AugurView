@@ -2,11 +2,14 @@
 
 {% block headScript %}
 <script src="static/js/view_formBuilder.js"></script>
+<script src="static/js/view_formFunction.js"></script>
 {% endblock %}
 
 {% block body %}
-<form method="POST" action="formReciever">
+<form action="javascript:;" onsubmit="formSubmited()" id="ajaxForm">
   <select id="endpointSelector"></select>
+
+  <input type="submit" value="Submit"></submit>
 </form>
 <div id="updateableImageContainer">
   <div id="imageWrapper">
