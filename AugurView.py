@@ -6,7 +6,15 @@ import os, sys, time, base64
 current_milli_time = lambda: int(round(time.time() * 1000))
 
 view = Blueprint('AugurView',__name__,template_folder="templates",static_folder="static")
-
+#   Note to future Brian:
+#
+#   Chrome will allow users to download images even if the image is missing from the server
+#   You /could/ require images to be uploaded every time, then restructure the backend
+#   So the image is saved, added to a request, sent, then deleted, and then the response is
+#   saved, sent back, then jQuery makes a call to the backend that deletes that image
+#   This would essentially cause the tmp file to operate as ram, and is much closer to the
+#   Intended functionality than you have gotten thusfar.
+#   -B
 
 UPLOAD_FOLDER = 'view/static/img/tmp/user_uploads'
 
@@ -26,6 +34,7 @@ def upload_image():
 
     if image and allowed_file(image.filename):
         filename = base64.b16encode(str(current_milli_time))[-5:] + "." + image.filename.rsplit('.')[-1]
+        # TODO: Ensure File doesn't conflict with an existing name (perhaps append some counter to the end of it?)
         image.save(os.path.join(UPLOAD_FOLDER, filename))
         return make_response("static/img/tmp/user_uploads/%s" % filename, 200)
     else:
