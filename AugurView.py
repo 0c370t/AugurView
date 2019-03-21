@@ -23,7 +23,7 @@ def upload_image():
     if image.filename == '':
         return make_response("No File Given!", 500)
     if image and allowed_file(image.filename):
-        filename = base64.urlsafe_b64encode(str(current_milli_time)) + "." + image.filename.rsplit('.')[-1]
+        filename = base64.b16encode(str(current_milli_time))[-5:] + "." + image.filename.rsplit('.')[-1]
         image.save(os.path.join(UPLOAD_FOLDER, filename))
         return make_response("view/static/img/tmp/user_upload/%s" % filename, 200)
     else:
