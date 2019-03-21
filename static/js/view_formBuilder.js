@@ -6,6 +6,7 @@ $(document).ready(function(){
 
 
   // Populate endpoint options
+  // TODO: Allow a default endpoint selection.
   $.get('getEndpoints', function(routes){
     for(route in routes){
       route = routes[route];
