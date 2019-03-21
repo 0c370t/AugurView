@@ -19,13 +19,15 @@ def upload_image():
     # Returns an http response, so the response code indicates success or errors
     if 'file' not in request.files:
         return make_response("No File Given!", 500)
+
     image = request.files['file']
     if image.filename == '':
         return make_response("No File Given!", 500)
+
     if image and allowed_file(image.filename):
         filename = base64.b16encode(str(current_milli_time))[-5:] + "." + image.filename.rsplit('.')[-1]
         image.save(os.path.join(UPLOAD_FOLDER, filename))
-        return make_response("view/static/img/tmp/user_upload/%s" % filename, 200)
+        return make_response("static/img/tmp/user_uploads/%s" % filename, 200)
     else:
         return make_response("Invalid File Extension", 500)
 
